@@ -1,1 +1,0 @@
-php ai-bolit.php --skip=jpg,png,gif,jpeg,JPG,PNG,GIF,bmp,xml,zip,rar,css,avi,pdf,PDF,mov,_deny,suspected
