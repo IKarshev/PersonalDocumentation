@@ -1,0 +1,14 @@
+Большой справочник по htaccess — http://htaccess.net.ru/
+Сервис для проверки почты — https://www.mail-tester.com/
+Сервис-генератор rewriterule — https://donatstudios.com/RewriteRule_Generator
+Сервис-сжиматель фоток https://imagecompressor.io/
+
+
+https://last-modified.com/ — проверка на last-modified
+Гайд как реализовать last-modified на битрикс — https://tichiy.ru/wiki/bitriks-ustanavlivaem-if-modified-since-zagolovki/
+Модуль для last-modified на битрикс — https://github.com/shestpa/Bitrix-Last-Modified?search=1
+
+bitrix кастомная сортировка — https://dev.1c-bitrix.ru/community/forums/forum6/topic141192/
+bitrix очистка upload от уже удаленный файлов — https://github.com/Mediahero/bitrix-clear-upload
+
+bitrix24 api — https://dev.1c-bitrix.ru/rest_help/?_gl=1*1camlpk*_ga*ODIyNzQzMzgyLjE2ODQ3Mzc1Mjk.*_ga_0X7ZLV9Y7K*MTY5MjE3MDc2Ny4xMC4xLjE2OTIxNzExMTguNjAuMC4w

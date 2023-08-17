@@ -1,0 +1,87 @@
+form.order_call_form{
+    width: 100%;
+}
+form.order_call_form .input_cont{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+}
+form.order_call_form input[type=text]{
+    width: calc( 100% - 40px );
+    max-width: 211px;
+    height: 100%;
+    border-radius: 0;
+    border:none;
+    background-color: #fff;
+    font-size: 13px;
+}
+
+form.order_call_form input[type=text].hide{
+    display: none;
+}
+
+form.order_call_form button{
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 40px;
+    /* background-color: #80973e; */
+    border: none;
+    outline: 0;
+
+    background: #80973e url(/bitrix/templates/aspro_next/images/svg/ai.svg) -21px -34px no-repeat;
+    border-radius: 0 2px 2px 0;
+
+}
+form.order_call_form button.disable{
+    background-color: #667935;
+}
+form.order_call_form button.disable:hover{
+    background-color: #667935;
+}
+form.order_call_form button:hover{
+    transition: .3s;
+    background-color: #a5be5e;
+}
+
+form.order_call_form span.success{
+    display: block;
+    box-sizing: border-box;
+    font-size: 13px;
+    height: 100%;
+    width: 40px;
+    padding: 8px 13px 7px;
+    min-width: 211px;
+}
+
+form.order_call_form span.success.hide{
+    display: none;   
+}
+
+form.order_call_form .error{
+    font-size: 13px;
+    color: #ED0A34;
+}
+form.order_call_form .text{
+    margin-bottom: 17px;
+}
+form.order_call_form .title{
+    font-size: 1.07em;
+    font-weight: 700;
+    color: #1d2029;
+    margin-top: -2px;
+}
+
+@media( max-width:761px ){
+    form.order_call_form{
+        margin-bottom: 16px;
+    }
+    form.order_call_form .input_cont{
+        width: 100%;
+    }
+    form.order_call_form input[type=text]{
+        max-width: none;
+    }
+}

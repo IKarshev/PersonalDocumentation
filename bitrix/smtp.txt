@@ -1,0 +1,23 @@
+Bitrix VM smtp Yandex
+1. Настроить крон на сайте через BitriVM
+2. Настроить аккаунт Яндекс — https://mail.yandex.ru/?uid=221678931#setup/client:
+	2.1 Включить доступ "С сервера imap.yandex.ru по протоколу IMAP" (Пароли приложений и OAuth-токены) https://www.dextra.ru/about/forclients/mail_configuration/
+3. Настроить smtp через BitriVM:
+===========================================================
+# smtp account configuration for main.akademshop.ru
+account main.akademshop.ru
+logfile /home/bitrix/msmtp_main.akademshop.ru.log
+host smtp.yandex.ru
+port 587
+from akademshop@yandex.ru
+aliases /etc/aliases
+keepbcc off
+auth on
+user akademshop@yandex.ru
+password 3HP2F*p!fv.is!#
+
+tls on
+tls_certcheck off
+tls_starttls on
+===========================================================
+4. В настрйоках сайта и главного модуля ввести пароль

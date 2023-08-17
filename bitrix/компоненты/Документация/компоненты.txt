@@ -1,0 +1,3 @@
+Кастомные типы полей в настройках компонента — https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=4880
+Список методов для работы с инфоблоками D7 — https://blog.budagov.ru/bitrix-d7-dlya-infoblokov/
+Пример создание компонента на ООП — https://hmarketing.ru/blog/bitrix/sozdanie-prostogo-komponenta-v-d7/

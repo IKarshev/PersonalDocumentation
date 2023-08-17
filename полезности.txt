@@ -1,0 +1,45 @@
+Команда для поиска строки внутри файлов: find public_html -type f -name "*.php" -exec grep -i -H 'Искомое_значение'  {} \; | tee -a poisk.log
+* Можно исключить папку: -not -path "*/bitrix/chache/*"
+Поиск файлов по названиям: find public_html/ -name "название файла"
+
+При установки битрикс шаг с настройкой БД:
+1. Создаём пустую БД
+2. Пользователь-существующий. Логин-название БД ,пароль-пароль от БД
+3. Название бд-название бд
+
+
+Проверка процессов на сервере ssh-командой:  ps aux | grep php, htop
+
+Логирование на стороне 1c-bitrix при выгрузке из 1С: Вставить в dbconn — define("BX_CATALOG_IMPORT_1C_PRESERVE", true);
+
+
+Поиск и вывод модифицированный файлов (за последние 30 дней не включая текущего) — find public_html -type f -mtime -30 ! -mtime -1 -printf '%TY-%Tm-%Td %TT %p\n' | sort -r
+
+
+Восстановить файлы из бэкапыа на vds — https://www.netangels.ru/support/cloud-vds/disk-mount/ | Кратко:
+fdisk -l — Посмотреть какие диски доступны внутри вашей ВМ:
+mount | grep '/dev' — Вывод СМОНТИРОВАННЫХ дисков
+
+Выполняем команды:
+# mkdir /tmp/backups
+# mount /dev/Название диска/tmp/backups
+После исполнения файлы бэкапа хранятся тут — /tmp/backups/
+
+
+Ошибка с сессией при установке битрикс на timeweb:
+------------------------------------------------
+Создал директорию
+/home/c/cp52296/cp52296.tmweb.ru/public_html/tmp/session
+и добавил в файл .htaccess параметр
+php_value session.save_path /home/c/cp52296/cp52296.tmweb.ru/public_html/tmp/session
+------------------------------------------------
+
+Проблема со входом в админку битрикс из-за проектной защиты:
+bitrix/modules/main/include.php закомментить строки:
+------------------------------------------------
+foreach (GetModuleEvents("main", "OnPageStart", true) as $arEvent)
+ExecuteModuleEventEx($arEvent);
+------------------------------------------------
+
+id инфоблока по коду:
+<?=CCache::$arIBlocks[SITE_ID]['aspro_scorp_form']['aspro_scorp_order_study'][0]?>
