@@ -36,3 +36,32 @@ scp username@example.com:/remote/path/to/file /local/path
 ~~~bash  
 chown <владелец>:<группа> <путь-до-файла>
 ~~~
+
+### Проверка процессов на сервере ssh-командами:
+~~~bash
+ps aux | grep php
+~~~
+~~~bash
+htop
+~~~
+
+### Поиск и вывод модифицированный файлов (за последние 30 дней не включая текущего):
+~~~bash
+find public_html -type f -mtime -30 ! -mtime -1 -printf '%TY-%Tm-%Td %TT %p\n' | sort -r
+~~~
+
+
+### Восстановить файлы из бэкапыа на vds
+[Документация](https://www.netangels.ru/support/cloud-vds/disk-mount/)<br>
+Кратко:
+
+`fdisk -l` — Посмотреть какие диски доступны внутри вашей ВМ<br>
+`mount | grep '/dev'` — Вывод СМОНТИРОВАННЫХ дисков
+
+
+Выполняем команды:
+~~~bash
+# mkdir /tmp/backups
+# mount /dev/Название диска/tmp/backups
+~~~
+После исполнения файлы бэкапа хранятся тут — `/tmp/backups/`
