@@ -17,6 +17,7 @@
 - [Скрипты](https://github.com/IKarshev/PersonalDocumentation/blob/main/bitrix/scripts/scripts.md)
 - [Всё про 1с](https://github.com/IKarshev/PersonalDocumentation/blob/main/bitrix/1с/1с.md)
 - [Вирусы](https://github.com/IKarshev/PersonalDocumentation/blob/main/bitrix/virus/virus.md)
+- [smtp](https://github.com/IKarshev/PersonalDocumentation/blob/main/bitrix/smtp.md)
 
 ## Php
 
