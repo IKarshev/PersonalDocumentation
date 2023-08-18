@@ -34,3 +34,52 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 ~~~bash
 select * from b_option where MODULE_ID = 'security' and NAME = 'ipcheck_disable_file';
 ~~~
+
+
+### Ошибка при установке Bitrix на open server
+При установки новых версий 1С-Bitrix, работающих на php 8 и выше на Open Server возникают ошибки.
+
+1. Ошибка `Allowed memory size of 1610612736 bytes exhausted (tried to allocate 262144 bytes) in Unknown on line 0 Fatal error ...`:
+
+Необходимо при установке заменить метод в файле `/bitrix/modules/main/lib/security/random.php` на:
+
+~~~bash 
+public static function getStringByCharsets($length, $charsetList)
+{
+       // Временно возвращаем "свою" рандомную строку
+       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+       $randstring = '';
+       for ($i = 0; $i < 10; $i++) {
+           $randstring = $characters[rand(0, strlen($characters))];
+       }
+       return $randstring; // Конец
+
+    $charsetVariants = strlen($charsetList);
+    $randomSequence = static::getBytes($length);
+
+    $result = '';
+    for ($i = 0; $i < $length; $i++)
+    {
+       $randomNumber = ord($randomSequence[$i]);
+       $result .= $charsetList[$randomNumber % $charsetVariants];
+    }
+    return $result;
+}
+~~~
+
+После установки нужно вернуть старый метод:
+~~~bash
+public static function getStringByCharsets($length, $charsetList)
+{
+    $charsetVariants = strlen($charsetList);
+    $randomSequence = static::getBytes($length);
+
+    $result = '';
+    for ($i = 0; $i < $length; $i++)
+    {
+        $randomNumber = ord($randomSequence[$i]);
+        $result .= $charsetList[$randomNumber % $charsetVariants];
+    }
+    return $result;
+}
+~~~

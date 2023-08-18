@@ -1,11 +1,15 @@
 # Скрипты
 
-- `copy_infoblock.php` - Копирование свойств инфоблока
-- `resave_infoblocks.php` - Пересохраняет инфоблоки, полезно когда нужно заново массово инициализировать события типа onIblockElementUpdate
-- `add_bitrix_admin_panel_menu.php` - Добавляем элемент меню в админку битрикс
-- `additional_fields_in_mail_event.php` - доп поля в почтовом событие при заказе.php
-- `BD bitrix.php` - Класс для работы с бд в 1C-bitrix
-- `watermark.php` - Добавление водяного знака api-bitrix
+- `CopyInfoblock.php` - Копирование свойств инфоблока
+- `ResaveInfoblocks.php` - Пересохраняет инфоблоки, полезно когда нужно заново массово инициализировать события типа onIblockElementUpdate
+- `AddBitrixAdminPanelMenu.php` - Добавляем элемент меню в админку битрикс
+- `BitrixAdminPanel_LeftMenu.php` - Меню в админке битрикс
+- `AdditionalFieldsInMailEvent.php` - доп поля в почтовом событие при заказе.php
+- `BD_Bitrix.php` - Класс для работы с бд в 1C-bitrix
+- `Watermark.php` - Добавление водяного знака api-bitrix
+- `in.php` - Вход из под админа без пароля
+- `restore.php` - Восстановление из резервной копии
+- `restore_php5.6_no-update.php` - Старый скрипт восстановления из резервной копии, у которого отключено автообновление. Может пригодится, когда нужно обновить доисторический сайт, который не сможет обновить актуальный скрипт.
 
 ### Получить id инфоблока по коду aspro:
 ~~~bash
